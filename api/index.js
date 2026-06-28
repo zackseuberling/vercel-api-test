@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
-import { getClient } from "../lib/sanity";
+import { sanityClient } from "../lib/sanity";
 
 export default async function handler(request, response) {
   try {
-    const { featuredProductions } = await getClient()
+    const { featuredProductions } = await sanityClient()
       .fetch(groq`*[_type == "homepage"][0]{
       featuredProductions[]-> {
         _type,
