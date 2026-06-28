@@ -1,5 +1,5 @@
 const { groq } = require("next-sanity");
-const { getClient } = require("../../lib/sanity");
+const { getClient } = require("../lib/sanity");
 
 export default async function handler(request, response) {
   try {
