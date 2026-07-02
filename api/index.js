@@ -1,6 +1,6 @@
 export default async function handler(request, response) {
-  const { limit } = request.body;
-  const limiter = limit ? limit : 12;
+  // const { limit } = request.body;
+  // const limiter = limit ? limit : 12;
 
   try {
     // TODO: fetch this from Sanity
@@ -1091,7 +1091,7 @@ export default async function handler(request, response) {
     ];
 
     const randomProjects = featuredProductions.sort(() => Math.random() - 0.5);
-    const results = randomProjects.slice(0, parseInt(limiter, 10));
+    const results = randomProjects.slice(0, parseInt(12, 10));
 
     return response.status(200).json({ body: results });
   } catch (error) {
